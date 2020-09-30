@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome to Virgo Airline</title>
+	<link rel="stylesheet" href="style.css">
+	<!-- put external link to call the css file named 'style'. -->
+</head>
+<body>
+	<!-- put header to design the upper part of the website. 'id' is given for the local link function-->
+	<header style="padding-top:20px;" id="topPart">
+		<div style="width:8%; height:100px; float:left;">
+			<!--This 'div' is given to fix the position of the icon located at header. This is located at the top left, and when the user clicks it redirects them to the default page. -->
+			<a href="index.html"><img src="flight_logo_head.jpg" alt="Logo" style="width:130px; height: 70px; margin-top: 10px; margin-left: 10px;">
+		</div>
+		<div style="width:67%; height:100px; float:left;">
+			<!--This 'div' is given to the header title, i have put 'float:left' to put the positio on left. Also, i have used h3 to have bigger size. -->
+			<h3 class="header" style="text-align: left; margin-top: 8px; font-family: Times New Roman; font-size: 30px; color: #87BDB7;">Virgo Airline ─────── <br /><!--HEADING 3-->
+			<!--'span' is used to give individual style on the certain paragraph located under h3.-->
+			<span style="text-align: center; font-family: Times New Roman; font-size: 18px; color: grey;">All the way to the sweetest vacation!</span></h3>
+		</div>
+		<div style="width:25%; height:100px; float:left;">
+			<!--I've put 'nav' inside the 'div' to handle this part easier in css. To create menu, i've used list and put class name as 'nav-container' which will be also used in css.-->
+			<nav style="margin-top:-50px;">
+				<ul class="nav-container">
+					<li class="nav-item"> <a href="index.html">HOME</a></li>
+					<li class="nav-item"> <a href="about.html">ABOUT US</a></li>
+					<li class="nav-item"> <a href="contact.html">INQUIRY</a></li>
+					<li class="nav-item"> <a href="booking.html">BOOKING</a></li>
+				</ul>
+			</nav>
+		</div>
+	
+	</header>
+	<div>
+		<!--This is the header image. I have copied and pasted the link of image so anyone entering this website can easily see the image.-->
+		<img src="https://i.pinimg.com/originals/fc/3d/fa/fc3dfa2e7a902db1f7cc844c3a40f19d.jpg" alt="title img" style="width:100%; height:400px;"/>
+	</div>
+	
+	<br />
+	<br />
+	<br />
+	<br />
+	<section>
+		<!--For the part with paragraphs, i used section do divide. Also, i used table and gave class to fix the style so it doesn't look like a table (Without border)-->
+		<table class ="intro-table" style="width:70%; margin:0px auto 0px auto; background-color: #ffffff;">
+			<h1 class="intro_header" style="margin-left: 250px; font-family: Times New Roman; color: #87BDB7"><i>Why with Virgo Airline?</i></h1><!--HEADING 1-->
+			<tr>
+				<!--Width is divided as equal as possible nicely. I have put 'span' to change the style of certain words inside the table. -->
+				<td width="33%"><div style="padding:10px; font-weight: bold; font-size:22px; color: #767676;">With <i><span style="color: #AFD1CD;">passion</i></span></div></td>
+				<td width="33%"><div style="padding:10px; font-weight: bold; font-size:22px; color: #767676;">Comfort your <i><span style="color: #AFD1CD;">mind</i></span></div></td>
+				<td width="34%"><div style="padding:10px; font-weight: bold; font-size:22px; color: #767676;">Make your imagination <i><span style="color: #AFD1CD;">comes true</i></span></div></td>
+			</tr>
+			<tr>
+				<td>
+				<!--In this part I've used 'article' to specify the part. The first and last 'p' will have different colors due to css using first-child and last-child. -->
+					<article style="padding:10px; margin-right: 20px; color: #767676;">
+						<p>Virgo Airline is firstly established in Malaysia by a student who always had a dream on flying everywhere without any limitation.</p> 
+						<p>The passion to go above the sky and meet the dream under the Sun has brought Virgo Airline to share the experience that will never be forgotten. </p> 
+						<p>Our aim is to bring you the unforgettable experience in the sky with the passion we had once from the childhood all the way to your vacation places.</p></article>
+				</td>
+				<td>
+					<!--padding and margin-right are given to look trendy with some spaces.-->
+					<article style="padding:10px; margin-right: 20px;color: #767676;">
+						<p>You will never have any troubles and stresses above the sky during the flight with Virgo Airline.</p>
+						<p>Once you are inside the plane, the expereience will never be the same with your previous flight.</p>
+						<p>Get comfortable in there, set your mind free and be ready to face the best relaxation experience.</p></article>
+				</td>
+				<td>
+					<article style="padding:10px; margin-right: 20px;color: #767676;">
+						<p>How about having your best meal above the sky with Virgo Airline?</p> 
+						<p>Your imagination on having 5-star meal is happening in Virgo Airline with our best chefs briniging you the colorful ingredients to satisfy your expactation on the flight experience.</p> </article>
+				</td>
+			</tr>
+		</table><br />
+	</section>
+		<!-- IMPLEMENTING THE DIV TO DISPLAY THE PHOTOS. -->
+		<div id="imagebox" style="width:910px; height:510px; border: none; margin-left: 250px;">
+		<img src="b737.jpg" alt="" id="imagePic">
+		</div>
+		<!-- ANOTEHR DIV TAG TO MOVE THE BUTTONS UNIFORMLY FIT TO THE DESIGN -->
+		<div style="margin-left: 250px;">
+		<!-- USING 'ONCLICK' TO FUNCTION IT WHEN USER CLICK THE BUTTON.-->
+		<!-- WHEN USER CLICKS BUTTON, IT DEDUCTS -1 FROM THE ARRAY. SO IT GOES BACK.-->
+		<button type="button" id="previous" onclick="slideShow(-1)">Previous</button>
+		<!-- WHEN USER CLICK BUTTON, IT COUNTS 1 FROM THE ARRAY, SO IT GOES FRONT. -->
+ 		<button type="button" id="next" onclick="slideShow(1)">Next</button>
+ 		</div>
+	<br />
+	<br />
+	<br />
+
+	<!--START OF SCRIPT-->
+	<script>
+	//CREATING ARRAY TO PUT ALL THE IMAGES.
+    var imgArray = ['b737.jpg','b747.jpg','a340.jpg','a380.jpg'];
+    //INITIATE THE VARIABLE THAT THE INDEX IS 0 NOW.
+    var index = 0;
+
+    //FUNCTION TO SHOW THE SLIDES. GETTING VALUE AS PARAMETER
+    function slideShow(value) 
+    {
+    	//INDEX IS ADDED FROM THE VALUE
+    	index += value;
+    	
+    	//IF INDEX IS EQUAL OR LARGER THEN THE LENGTH OF ARRAY, INDEX IS 0, WHICH MEANS THE IMAGE GOES BACK TO THE FIRST
+    	if (index >= imgArray.length) {
+    		index = 0;
+    	}
+    	//IF INDEX IS SMALLER THAN 0, INDEX IS -1 FROM THE LENGTH OF ARRAY, WHICH MEANS THE IMAGE GOES BACK TO THE LAST
+    	else if (index < 0) {
+    		index = imgArray.length - 1;
+    	}
+    	//BY USING DOM, GET SOURCE FROM THE HTML AND PUT IT IN THE ARRAY.
+    	document.getElementById("imagePic").src = imgArray[index];
+    }
+    //END OF SCRIPT
+	</script>
+
+	<!--I've created footer to indicate the copyright. -->
+	<footer style="width:100%; height:40px; background-color:#AFD1CD; padding-top: 10px;">
+		<p style="color:#245A53; text-align: center; font-family: Times New Roman;"><b>&copy; Copyright | VIRGO AIRLINE 765 | 6193365</b></p>
+		<a href="#topPart"><p style="text-align: center;">▲▲▲</p></a> <!-- This is to go top of the page using local link. id 'topPart' is given at the header. -->
+	</footer>
+	<!--These are the banners located at each sides. I have used 'fixed' and 'relative' in index.html. Fixed banners will be always at the right bottom and when the
+		user clicks each banners, the first one will bring user to the internal link while the third one is going to the external link. -->
+	<a href="booking.html" target="_blank"><img style="position: fixed; bottom:0px; right:0px; width:80px; height:180px;" src="fixed_tab.png"/></a>
+		<!--z-index--><!--EXTERNAL LINK-->
+	<a href="https://www.hotels.com" target="_blank"><img style="position: fixed; bottom:180px; right:0px; width:80px; height:180px; z-index: -1;" src="fixed_tab2.png"/></a>
+</body>
+</html>
